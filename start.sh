@@ -12,6 +12,8 @@ for user in $GITHUB_USERS; do
   echo "Getting ${user}'s public key from GitHub"
   curl -s "https://github.com/${user}.keys" >> $authorized_keys
 done
+echo "" >> $authorized_keys
 
 echo "Starting SSH daemon"
 /usr/sbin/sshd -D
+
